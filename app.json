@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/goods/goods",
+    "pages/confirm/confirm",
+    "pages/list/list",
+    "pages/info/info"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "惠灵顿",
+    "navigationBarTextStyle":"black"
+  }
+}

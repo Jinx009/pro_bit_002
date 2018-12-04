@@ -1,0 +1,23 @@
+<view class="page">
+    <view class="page__hd">
+         <view class="logo">
+            <image src="http://pbqg2m54r.bkt.clouddn.com/logo.png" />
+            <view class="logo__text">惠灵顿</view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <wux-cell-group title="">
+            <wux-cell hover-class="none">
+                <wux-input label="手机号码" placeholder="请输入您的手机号码" />
+            </wux-cell>
+            <wux-cell hover-class="none">
+                <wux-input label="验证码" placeholder="请输入您的验证码" >
+                    <view slot="footer" style="margin-left: 5px">点击发送</view>
+                </wux-input>
+            </wux-cell>
+        </wux-cell-group>
+    </view>
+     <view class="page__bd page__bd_spacing">
+         <wux-button block type="royal" bindtap="goInfo" >确认绑定</wux-button>
+     </view>
+</view>

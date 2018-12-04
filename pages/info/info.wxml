@@ -1,0 +1,33 @@
+<wux-select id="wux-select1" />
+<wux-select id="wux-select2" />
+<view class="page">
+    <view class="page__bd">
+        <wux-cell-group title="">
+            <wux-cell hover-class="none">
+                <wux-input label="学生姓名" placeholder="请输入学生姓名" />
+            </wux-cell>
+        </wux-cell-group>
+    </view>
+      <view class="page__bd">
+        <wux-cell-group title="">
+            <wux-cell title="班级" extra="{{ title1 }}" bind:click="onClick1"></wux-cell>
+            <wux-cell title="性别" extra="{{ title2 }}" bind:click="onClick2"></wux-cell>
+        </wux-cell-group>
+    </view>
+     <view class="page__bd">
+        <wux-cell-group title="">
+            <wux-cell hover-class="none">
+                <wux-input label="年龄" placeholder="请输入学生年龄" />
+            </wux-cell>
+             <wux-cell hover-class="none">
+                <wux-input label="身高" placeholder="请输入学生身高CM" />
+            </wux-cell>
+             <wux-cell hover-class="none">
+                <wux-input label="体重" placeholder="请输入学生体重KG" />
+            </wux-cell>
+        </wux-cell-group>
+    </view>
+     <view class="page__bd page__bd_spacing">
+         <wux-button block type="royal" bindtap="goGoods" >确认保存</wux-button>
+     </view>
+</view>
