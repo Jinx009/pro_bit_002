@@ -1,42 +1,44 @@
+var app = getApp();
 Page({
-  goList: function () {
+  data: {
+    list:[]
+  },
+  onLoad: function () {
+    this._getData();
+  },
+  _goDetail:function(e){
+    var id = e.currentTarget.dataset.id;
+    app.setSession('_id',id);
     wx.redirectTo({
-      url: '/pages/list/list'
+      url: '../../pages/detail/detail'
     })
   },
-  onChange(e) {
-    console.log('onChange', e)
-    this.setData({
-      error: isTel(e.detail.value),
-      value: e.detail.value,
-    })
+  _getData: function(){
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading'
+      })
+      var that = this;
+      wx.request({
+        url: 'https://driver.amize.cn/front/d/pro_task/waitList' + app.getSession('_session'),
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          if(res.data.code=='200'){
+            that.setData({
+              list: res.data.data,
+            })
+            wx.hideToast();
+          }else{
+            wx.redirectTo({
+              url: '/pages/index/index'
+            })
+          }
+        }
+      })
   },
-  onFocus(e) {
-    this.setData({
-      error: isTel(e.detail.value),
-    })
-    console.log('onFocus', e)
+  onReady: function () {
+   
   },
-  onBlur(e) {
-    this.setData({
-      error: isTel(e.detail.value),
-    })
-    console.log('onBlur', e)
-  },
-  onConfirm(e) {
-    console.log('onConfirm', e)
-  },
-  onClear(e) {
-    console.log('onClear', e)
-    this.setData({
-      error: true,
-      value: '',
-    })
-  },
-  onError() {
-    wx.showModal({
-      title: 'Please enter 11 digits',
-      showCancel: !1,
-    })
-  },
-})
+});

@@ -8,8 +8,8 @@
 	},
 	"compileType": "weapp",
 	"libVersion": "1.6.0",
-	"appid": "wx6494fd983d3b87b7",
-	"projectname": "bit_pro_2",
+	"appid": "wxd11fde4d0cf51a31",
+	"projectname": "项目管理",
 	"condition": {
 		"weapp": {
 			"current": -1,

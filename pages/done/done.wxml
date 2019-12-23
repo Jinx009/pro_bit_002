@@ -1,0 +1,23 @@
+<view class="page">
+    <block class="page__bd" wx:for="{{list}}" wx:key="no" >
+        <view class="weui-cells weui-cells_after-title"  catchtap="_goDetail" data-id="{{item.id}}" >
+            <view class="weui-cell">
+                <view class="weui-cell__bd">Name</view>
+                <view class="weui-cell__ft">{{item.name}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Dep</view>
+                <view class="weui-cell__ft">{{item.dep}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Time</view>
+                <view class="weui-cell__ft">{{item.pickTime}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Date</view>
+                <view class="weui-cell__ft">{{item.dateStr}}</view>
+            </view>
+        </view>
+    </block>
+</view>
+

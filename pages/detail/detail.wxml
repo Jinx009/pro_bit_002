@@ -1,0 +1,43 @@
+<!--pages/detail/detail.wxml-->
+<view class="page">
+    <block class="page__bd"  >
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">Name</view>
+                <view class="weui-cell__ft">{{item.name}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Dep</view>
+                <view class="weui-cell__ft">{{item.dep}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Time</view>
+                <view class="weui-cell__ft">{{item.pickTime}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Flight</view>
+                <view class="weui-cell__ft">{{item.flight}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Descratation</view>
+                <view class="weui-cell__ft">{{item.description}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">pick up time</view>
+                <view class="weui-cell__ft">{{item.pickedTime}}</view>
+            </view>
+             <view class="weui-cell">
+                <view class="weui-cell__bd">Date</view>
+                <view class="weui-cell__ft">{{item.dateStr}}</view>
+            </view>
+        </view>
+    </block>
+    <view class="weui-btn-area" wx:if="{{item.status === 0}}">
+        <button class="weui-btn"  type="primary" bindtap="_do">确认接到</button>
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn"  type="warn" bindtap="_back">返回列表</button>
+    </view>
+</view>
+
+

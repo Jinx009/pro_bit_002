@@ -1,0 +1,44 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号码</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="number" bindinput="_mD" name="mobilePhone" placeholder="请输入手机号码"/>
+                </view>
+            </view>
+             <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">密码</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input password class="weui-input" bindinput="_pD"  name="pwd" placeholder="请输入密码"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">车牌号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="_cD"   placeholder="请输入车牌号"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="_nD"  name="pwd" placeholder="请输入姓名"/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="_register">注  册</button>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn"  type="warn" bindtap="_login">登 录</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+/* pages/done/done.wxss */
+ @import "../../app.wxss";
+.weui-cells{
+  margin-bottom: 8px;
+}
+

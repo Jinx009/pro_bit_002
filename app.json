@@ -1,16 +1,42 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/goods/goods",
-    "pages/confirm/confirm",
+  "pages": [
     "pages/list/list",
-    "pages/info/info"
+    "pages/done/done",
+    "pages/detail/detail",
+    "pages/register/register",
+    "pages/me/me",
+    "pages/index/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "惠灵顿",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "易接通",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "posation":"bottom",
+    "list": [
+      {
+        "selectedIconPath": "images/111.png",
+        "iconPath": "images/11.png",
+        "pagePath": "pages/list/list",
+        "text": "可接送"
+      },
+      {
+        "selectedIconPath": "images/221.png",
+        "iconPath": "images/22.png",
+        "pagePath": "pages/done/done",
+        "text": "已完成"
+      },
+      {
+        "selectedIconPath": "images/331.png",
+        "iconPath": "images/33.png",
+        "pagePath": "pages/me/me",
+        "text": "关于我"
+      }
+    ]
   }
 }
