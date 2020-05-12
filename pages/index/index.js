@@ -1,66 +1,73 @@
-var app = getApp();
+import Toast from '../../dist/toast/toast';
+//index.js
+//获取应用实例
+const app = getApp()
+
 Page({
   data: {
-    _m : '',
-    _p : ''
+    motto: '欢迎',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    active:0
   },
-  onLoad:function(){
-
-  },
-  onReady: function () {
-    
-  },
-  _mD : function(e){
-    this.setData({
-      _m: e.detail.value
-    })
-  },
-  _pD : function (e) {
-    this.setData({
-      _p: e.detail.value
-    })
-  },
-  _register:function(){
-    wx.redirectTo({
-      url: '/pages/register/register'
-    })
-  },
-  _login: function(){
-    if (this.data._m == '' || this.data._m==null){
-      wx.showToast({
-        title: '手机号码不能为空',
-        icon: 'warn',
-        duration: 1000
-      })
-    } else if (this.data._p == '' || this.data._p == null) {
-      wx.showToast({
-        title: '密码不能为空',
-        icon: 'warn',
-        duration: 1000
-      })
-    }else{
-      wx.request({
-        url: 'https://driver.amize.cn/front/d/pro_driver/login?mobilePhone=' + this.data._m + '&pwd=' + this.data._p,
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        success: function (res) {
-          console.log('1')
-          if ('200' == res.data.code) {
-            app.setSession('_session', ';jsessionid=' + res.header['Set-Cookie'].split(';')[0].split('=')[1]);
-            console.log('2')
-            wx.switchTab({
-              url: '/pages/list/list'
-            })
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'warn',
-              duration: 1000
-            })
-          }
-        }
+  onChange(event) {
+    if(event.detail=='1'){
+      wx.redirectTo({
+        url: '../me/index',
       })
     }
+    if (event.detail == '2') {
+      wx.redirectTo({
+        url: '../about/index',
+      })
+    }
+    this.setData({ active: event.detail });
+  },
+  formatDate(date) {
+    if(date!=''){
+      date = new Date(date);
+    }else{
+      date = new Date();
+    }
+    wx.setStorage({
+      key: 'selectDate',
+      data: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+    })
+    wx.redirectTo({
+      url: '../select/index',
+    })
+    // return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  },
+  onConfirm(event) {
+    this.setData({
+      show: false,
+      date: this.formatDate(event.detail),
+    });
+  },
+  onLoad: function () {  
+  //   wx.login({
+  //     success(res) {
+  //       if (res.code) {
+  //         //发起网络请求
+  //         wx.request({
+  //           url: 'https://iot.zhanway.com/wxapp/login',
+  //           data: {
+  //             code: res.code
+  //           },
+  //           success: function (res) {
+  //             if (res.data.code == '200') {
+  //               wx.setStorage({
+  //                 key: 'openid',
+  //                 data: res.data.data
+  //               })
+  //             } 
+  //           }
+  //         })
+  //       } else {
+  //         console.log('登录失败！' + res.errMsg)
+  //       }
+  //     }
+  //   })
   }
-});
+})

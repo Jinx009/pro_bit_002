@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<van-tabs active="{{activeArea}}" bind:change="onChangeArea">
+  <van-tab title="场地 1">
+    <van-panel title="日期" desc="2020-05-15" status="">
+    </van-panel>
+     <van-panel title="价格" desc="￥800/每时段" status="">
+    <view>
+      <van-cell value="预约"  is-link>
+        <view slot="title">
+          <view class="van-cell-text"> 
+            <van-tag type="danger">08:00~10:00</van-tag>
+          </view>
+        </view>
+      </van-cell>
+       <van-cell value="预约"  is-link>
+        <view slot="title">
+          <view class="van-cell-text"> 
+            <van-tag type="danger">10:00~12:00</van-tag>
+          </view>
+        </view>
+      </van-cell>
+       <van-cell value="预约"  is-link>
+        <view slot="title">
+          <view class="van-cell-text"> 
+            <van-tag type="danger">08:00~10:00</van-tag>
+          </view>
+        </view>
+      </van-cell>
+       <van-cell value="已被预约"  >
+        <view slot="title">
+          <view class="van-cell-text"> 
+            <van-tag>12:00~14:00</van-tag>
+          </view>
+        </view>
+      </van-cell>
+      </view>
+    </van-panel>
+  </van-tab>
+  <van-tab title="场地 2"></van-tab>
+  <van-tab title="场地 3"></van-tab>
+  <van-tab title="场地 4"></van-tab>
+</van-tabs>
+<van-submit-bar
+  price="{{ 100000 }}"
+  button-text="确认预约"
+  bind:click="goLogin"
+  bind:submit="goLogin"
+  tip="{{ true }}"
+>
+  <view slot="tip">您已选定2020年5月15日08:00~10:00时段预约</view>
+</van-submit-bar>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o">预约场地</van-tabbar-item>
+  <van-tabbar-item icon="search">我的</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">关于</van-tabbar-item>
+</van-tabbar>

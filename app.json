@@ -1,42 +1,39 @@
 {
   "pages": [
-    "pages/list/list",
-    "pages/done/done",
-    "pages/detail/detail",
-    "pages/register/register",
-    "pages/me/me",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/me/index",
+    "pages/select/index",
+    "pages/login/index",
+    "pages/about/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "易接通",
+    "navigationBarTitleText": "足球场预约",
     "navigationBarTextStyle": "black"
   },
-  "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#11cd6e",
-    "borderStyle": "white",
-    "posation":"bottom",
-    "list": [
-      {
-        "selectedIconPath": "images/111.png",
-        "iconPath": "images/11.png",
-        "pagePath": "pages/list/list",
-        "text": "可接送"
-      },
-      {
-        "selectedIconPath": "images/221.png",
-        "iconPath": "images/22.png",
-        "pagePath": "pages/done/done",
-        "text": "已完成"
-      },
-      {
-        "selectedIconPath": "images/331.png",
-        "iconPath": "images/33.png",
-        "pagePath": "pages/me/me",
-        "text": "关于我"
-      }
-    ]
-  }
+  "usingComponents": {
+    "van-button": "dist/button/index",
+    "van-picker": "dist/picker/index",
+    "van-tree-select": "dist/tree-select/index",
+    "van-tabbar": "dist/tabbar/index",
+    "van-tabbar-item": "dist/tabbar-item/index",
+    "van-cell": "dist/cell/index",
+    "van-cell-group": "dist/cell-group/index",
+    "van-field": "dist/field/index",
+    "van-calendar": "dist/calendar/index",
+    "van-tab": "dist/tab/index",
+    "van-tabs": "dist/tabs/index",
+    "van-image": "dist/image/index",
+    "van-panel": "dist/panel/index",
+    "van-tag": "dist/tag/index",
+    "van-row": "dist/row/index",
+    "van-col": "dist/col/index",
+    "van-submit-bar": "dist/submit-bar/index",
+    "van-grid": "dist/grid/index",
+    "van-grid-item": "dist/grid-item/index",
+    "van-notice-bar": "dist/notice-bar/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<van-notice-bar
+  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+/>
+<van-row>
+  <van-col span="22" offset="1">
+  <van-panel title="场地简介" >
+  <view style="font-size:12px;">噫吁嚱，危乎高哉！蜀道之难，难于上青天！蚕丛及鱼凫，开国何茫然！尔来四万八千岁，不与秦塞通人烟。西当太白有鸟道，可以横绝峨眉巅。地崩山摧壮士死，然后天梯石栈相钩连。上有六龙回日之高标，下有冲波逆折之回川。黄鹤之飞尚不得过，猿猱欲度愁攀援。青泥何盘盘，百步九折萦岩峦。扪参历井仰胁息，以手抚膺坐长叹。</view>
+</van-panel>
+  </van-col>
+</van-row>
+
+<view style="height:60px;" ></view>
+<van-tabbar active="{{ active }}" bind:change="onChange" >
+  <van-tabbar-item icon="home-o">预约场地</van-tabbar-item>
+  <van-tabbar-item icon="search">我的</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">关于</van-tabbar-item>
+</van-tabbar>
